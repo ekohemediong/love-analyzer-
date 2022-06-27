@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+   <title>Love Analyzer</title>
+<style>
+@keyframes pictures{
+0%{
+-webkit-transform:rotate(0deg);
+}
+25%{
+-webkit-transform:rotate(35deg);
+}
+30%{
+-webkit-transform:rotate(45deg);
+}
+35%{
+-webkit-transform:rotate(55deg);
+}
+40%{
+-webkit-transform:rotate(65deg);
+}
+45%{
+-webkit-transform:rotate(95deg);
+}
+50%{
+-webkit-transform:rotate(105deg);
+}
+55%{
+-webkit-transform:rotate(140deg);
+}
+
+60%{
+-webkit-transform:rotate(180deg);
+}
+85%{
+-webkit-transform:rotate(250deg);
+}
+100%{
+-webkit-transform:rotate(360deg);
+}
+}
+@keyframes decoration{
+0%{
+-webkit-transform:rotate(0deg);
+}
+15%{
+-webkit-transform:rotate(15deg);
+}
+35%{
+-webkit-transform:rotate(20deg);
+}
+45%{
+-webkit-transform:rotate(25deg);
+}
+65%{
+-webkit-transform:rotate(-0deg);
+}
+75%{
+-webkit-transform:rotate(-15deg);
+}
+85%{
+-webkit-transform:rotate(-20deg);
+}
+100%{
+-webkit-transform:rotate(25deg);
+}
+
+}
+
+@keyframes word{
+0%{
+letter-spacing:0px;
+color:yellow;
+text-shadow:0px 0px 5px red; 
+}
+15%{
+letter-spacing:3px;
+color:green;
+text-shadow:2px 2px 5px black; 
+}
+35%{
+letter-spacing:5px;
+color:purple;
+text-shadow:5px 5px 5px green; 
+}
+45%{
+letter-spacing:10px;
+color:red;
+text-shadow:7px 7px 5px blacl; 
+}
+65%{
+letter-spacing:-10px;
+color:gray;
+text-shadow:-7px -7px 5px red; 
+}
+75%{
+letter-spacing:-5px;
+color:lime;
+text-shadow:-5px -5px 5px yellow; 
+}
+85%{
+letter-spacing:-3px;
+color:brown;
+text-shadow:-2px -2px 5px pink; 
+}
+100%{
+letter-spacing:-0px;
+color:orange;
+text-shadow:0px 0px 5px Azure; 
+}
+
+}
+body{
+padding:0;
+margin:0;
+background:black;
+
+}
+#img{
+width:100%;
+transition:opacity 4s ease-in-out;
+opacity:1;
+position:fixed;
+z-index:1;
+margin-top:-70px;
+}
+#logo{
+position:absolute;
+top:0;
+left:0;
+width:40%;
+border-radius:90px;
+z-index:2;
+-webkit-animation:pictures 2s ease-in-out 1s alternate infinite; 
+}
+.Text{
+color:red;
+font-variant:Small-caps; 
+}
+#Scode{
+color:red;
+font-family:monospace;
+}
+#Q1,#Q2,#Q3,#Q4,#Q5{
+z-index:3;
+position:relative;
+text-align:center;
+box-shadow:0px 0px 5px gray; 
+margin:70px 10px; 
+padding:35px 18px; 
+border-radius:5px;
+}
+#Q2{
+display:none;
+}
+#Q3{
+display:none;
+}
+#Q4{
+display:none;
+}
+#Q5{
+display:none;
+}
+.SecurityNum{
+width:3%;
+padding:15px 25px; 
+border:1px inset red; 
+background:transparent;
+border-radius:5px;
+box-shadow:0px 0px 5px red,inset 0px 0px 5px red;
+outline:none;
+color:red;
+text-shadow:0px 0px 2px red; 
+transition:1s ease-in-out; 
+}
+.SecurityNum:hover{
+-webkit-Transform:skew(30deg,15deg);
+-moz-Transform:skew(30deg,15deg);
+-o-Transform:skew(30deg,15deg);
+-ms-Transform:skew(30deg,15deg);
+Transform:skew(30deg,15deg);
+}
+.next{
+text-align:right;
+margin:10px 0;
+}
+.btn{
+padding:15px 25px; 
+background:transparent;
+outline:none;
+color:white;
+border:1px solid red;
+box-shadow:0px 0px 8px red,inset 0px 0px 8px red;
+border-radius:5px;
+transition:1s ease-in-out; 
+}
+.btn:hover{
+background:transparent;
+-webkit-transform:rotate(45deg);
+-moz-transform:rotate(45deg);
+-o-transform:rotate(45deg);
+-ms-transform:rotate(45deg);
+transform:rotate(45deg);
+}
+.errormsg{
+color:red;
+font-size:15px;
+font-variant:small-caps; 
+}
+.names{
+color:black;
+font-family:cursive;
+font-size:20px;
+}
+.name{
+background:white;
+margin:5px 5px; 
+padding:15px 15px;
+text-align:left;
+border-radius:5px;
+}
+.name:hover{
+background:gray;
+}
+input[type="radio"]{
+-webkit-accent-color:red;
+-moz-accent-color:red;
+-o-accent-color:red;
+-ms-accent-color:red;
+accent-color:red;
+}
+.name:hover:after{
+content:"🔫";
+}
+.label{
+color:red;
+}
+.question{
+width:70%;
+padding:15px 25px; 
+margin:15px 5px; 
+border-radius:5px;
+background:transparent;
+border:2px solid red; 
+box-shadow:0px 0px 5px red,inset 0px 0px 5px red; 
+outline:none;
+color:white;
+transition:2s ease-in-out 1s; 
+animation:decoration 2s ease-in-out 2s alternate infinite;
+}
+#MoF{
+margin-top:8px;
+}
+.Question{
+color:white;
+}
+.radio{
+color:royalblue;
+}
+.test{
+margin:30px 5px;
+box-shadow:0px 0px 5px gray; 
+border-radius:5px;
+padding:15px 25px;
+}
+#crush{
+padding:15px 25px;
+width:60%;
+background:transparent;
+outline:none;
+border-radius:5px;
+color:white;
+}
+#faceCon{
+text-align:center;
+}
+#face{
+font-size:30px;
+
+}
+#results{
+color:royalblue;
+animation:word 2s ease-in-out 2s alternate infinite;
+}
+.rule{
+margin:0px -18px;
+border:1px inset gray; 
+box-shadow:0px 0px 5px gray; 
+border-radius:5px;
+}
+#colors{
+margin:5px 5px;
+text-align:left; 
+}
+#red{
+background:red;
+height:30px;
+width:25%;
+margin:5px 5px; 
+color:white;
+padding:0px 5px;
+border-radius:1px;
+}
+#brown{
+background:brown;
+height:30px;
+width:50%;
+margin:5px 5px; 
+color:white;
+padding:0px 5px;
+border-radius:1px;
+}
+#yellow{
+background:yellow;
+height:30px;
+width:75%;
+margin:5px 5px; 
+color:black;
+padding:0px 5px;
+border-radius:1px;
+}
+.lime{
+background:lime;
+height:30px;
+width:100%;
+margin:5px 5px; 
+color:black;
+padding:0px 5px;
+border-radius:1px;
+}
+/*.length{
+height:30px;
+width:100%;
+border:1px solid white; 
+margin:12px 0px; 
+padding:10px 15px;
+text-align:left;
+}*/
+.htext{
+color:royalblue;
+}
+.box{
+margin:15px 8px; 
+box-shadow:0px 0px 5px gray; 
+border-radius:5px;
+padding:5px 25px;
+
+}
+#recommendation{
+color:violet; 
+}
+</style>
+</head>
+<body>
+<div>
+<img id="img" src="One.jpeg"/>
+<img id="logo" src="Logo.jpeg"/>
+</div>
+<div id="Q1">
+<h3 class="Text">Security code is : 0005</h3>
+<p id="Scode">Input security code:</p>
+<form>
+<input type="number" class="SecurityNum" maxlength="1" size="1" />
+<input type="number"  class="SecurityNum" maxlength="1" size="1"/>
+<input type="number" class="SecurityNum" maxlength="1" size="1"/>
+<input type="number" class="SecurityNum" maxlength="1" size="1"/>
+<br/><span class="errormsg"></span>
+</form>
+<div class="next">
+<button class="btn">Audio</button>
+<button class="btn">Next</button>
+</div>
+</div>
+<div id="Q2">
+<h2 class="Text">Choose name:</h2>
+<form>
+<div class="name">
+<input type="radio" name="names" class="students" value="Desmond"/>
+<label for="names" class="names">Desmond Benson Ikott❤</label>
+</div>
+<div class="name">
+<input type="radio" name="names" class="students" value="Daniel" />
+<label for="names" class="names">Daniel Awai❤</label>
+</div>
+<div class="name">
+<input type="radio" name="names" class="students" value="Emediong"  />
+<label for="names" class="names">Emediong Ekoh❤✅</label>
+</div>
+<div class="name">
+<input type="radio" name="names" class="students"  value="Godstime"  />
+<label for="names" class="names">Godstime Akaniyene❤</label>
+</div>
+<div class="name">
+<input type="radio" name="names" class="students" value="Joseph" />
+<label for="names" class="names">Joseph Abasiekong❤</label>
+</div>
+<div class="name">
+<input type="radio" name="names" class="students" value="Donald"  />
+<label for="names" class="names">Donald Uduak❤</label>
+</div>
+<div class="name">
+<input type="radio" name="names" class="students" value="Nduke"  />
+<label for="names" class="names">Nduke obong Abasi❤</label>
+</div>
+<div class="name">
+<input type="radio" name="names" class="students"  value="Editoro" />
+<label for="names" class="names">Editoro Attai❤</label>
+</div>
+<div class="name">
+<input type="radio" name="names" class="students" value="Mfon" />
+<label for="names" class="names">Mfon obong Abasi❤</label>
+</div>
+<div class="name">
+<input type="radio" name="names" class="students" value="Mmekid-Mfon" />
+<label for="names" class="names">Mmekid-Mfon okon❤</label>
+</div>
+<div class="name">
+<input type="radio" name="names" class="students" value="Robert" />
+<label for="names" class="names">Favour uduak Robert❤</label>
+</div>
+<div class="name">
+<input type="radio" name="names" class="students" value="Victoria"  />
+<label for="names" class="names">Victoria Mandu❤</label>
+</div>
+<div class="name">
+<input type="radio" name="names" class="students" value="Joy" />
+<label for="names" class="names">Joy Brendan❤</label>
+</div>
+<div class="name">
+<input type="radio" name="names" class="students" value="Joy"  />
+<label for="names" class="names">Joy johnny❤</label>
+</div>
+<div class="name">
+<input type="radio" name="names" class="students" value="Samantha"  />
+<label for="names" class="names">Samantha Udia❤</label>
+</div>
+<div class="name">
+<input type="radio" name="names" class="students" value="Abiboi"  />
+<label for="names" class="names">Abiboi Udia❤</label>
+</div>
+<div class="name">
+<input type="radio" name="names" class="students" value="Patience"  />
+<label for="names" class="names">Patience Asenewo❤</label>
+</div>
+<div class="name">
+<input type="radio" name="names" class="students" value="Bright"  />
+<label for="names" class="names">Bright Anthony❤</label>
+</div>
+<div class="name">
+<input type="radio" name="names" class="students" value="Itoro"  />
+<label for="names" class="names">Itoro Monday❤</label>
+</div>
+<div class="name">
+<input type="radio" name="names" class="students" value="Princewill"  />
+<label for="names" class="names">Princewill ime Ekwere❤</label>
+</div>
+<div class="name">
+<input type="radio" name="names" class="students" value="Esther"  />
+<label for="names" class="names">Esther Edet❤</label>
+</div>
+<div class="name">
+<input type="radio" name="names" class="students" value="Divine"  />
+<label for="names" class="names">Divine Albert❤</label>
+</div>
+<div class="name">
+<input type="radio" name="names" class="students" value="Edueno"  />
+<label for="names" class="names">Edueno Abasi obong❤</label>
+</div>
+<!--
+<div class="names">
+<input type="radio" name="names" class="students" value=""  />
+<label for="names" class="names">Desmond Benson Ikott❤</label>
+</div>
+<div class="names">
+<input type="radio" name="names" class="students" value=""  />
+<label for="names" class="names">Desmond Benson Ikott❤</label>
+</div>
+<div class="names">
+<input type="radio" name="names" class="students" value=""  />
+<label for="names" class="names">Desmond Benson Ikott❤</label>
+</div>
+<div class="names">
+<input type="radio" name="names" class="students" value=""  />
+<label for="names" class="names">Desmond Benson Ikott❤</label>
+</div>
+<div class="names">
+<input type="radio" name="names" class="students" value=""  />
+<label for="names" class="names">Desmond Benson Ikott❤</label>
+</div>
+<div class="names">
+<input type="radio" name="names" class="students" value=""  />
+<label for="names" class="names">Desmond Benson Ikott❤</label>
+</div>
+-->
+<br/><span class="errormsg"></span>
+</form>
+<button class="btn">Audio</button>
+<button class="btn">Next</button>
+</div>
+
+<div id="Q3">
+<form>
+<div>
+<input type="text" class="question" name="currentName"placeholder="What is your name? "/>
+<br/><span class="errormsg"></span>
+</div>
+<div>
+<input type="Number" class="question" name="Age" placeholder="How old are you? 👵 "/>
+<br/><span class="errormsg"></span>
+</div>
+<div id="MoF">
+<span class="label">Are you male or female </span><br/>
+<input type="radio" name="sex" class="sex" value="male"/>
+<span class="label">:male</span>
+<input type="radio" name="sex" class="sex" value="female"/>
+<span class="label">:female</span>
+</div>
+</form>
+<br/><span class="errormsg"></span><br/>
+<button class="btn">Audio</button>
+<button class="btn">Next</button>
+</div>
+
+<div id="Q4">
+<div id="faceCon">
+<span id="face">👀</face>
+</div>
+<form>
+<div class="test">
+<span class="Question">What's your crush's name ?:</span>
+<input type="text" id="crush" placeholder="What's your crush's name"/>
+</div>
+<div class="test">
+<span class="Question">How  do you feel when talking to <span class="gender"> ?:</span> </span>
+<br/><span class="radio">Shy:</span>
+<input type="radio" class="time"name="time" value="shy"/><span class="radio">normal:</span>
+<input type="radio" class="time" name="time" value="normal"/><span class="radio">bold:</span>
+<input type="radio" class="time"name="time" value="bold"/><span class="radio">excited:</span>
+<input type="radio" class="time" name="time" value="excited"/>
+</div>
+<div class="test">
+<span class="Question">How long do you talk to <span class="gender"></span> ?:</span>
+<br/><span class="radio">within 5mins and+:</span>
+<input type="radio" class="feel" name="feel" value="5"/><br/><span class="radio">within 20mins and+:</span>
+<input type="radio" class="feel" name="feel" value="20"/><br/><span class="radio">within 30mins and+:</span>
+<input type="radio" class="feel" name="feel" value="30"/><br/><span class="radio">not at all:</span>
+<input type="radio" class="feel" name="feel" value="0"/>
+</div>
+<div class="test">
+<span class="Question">Did you tell <span class="gender"></span> you love <span class="gender"></span> ?</span>
+<br/><span class="radio">Yes:</span>
+<input type="radio" class="love" name="love" value="yes"/><span class="radio">No:</span>
+<input type="radio" class="love" name="love" value="no"/>
+</div>
+<span class="errormsg"></span>
+</form>
+<button class="btn">Audio</button>
+<button class="btn">Result</button>
+</div>
+
+<div id="Q5">
+<div>
+<h1 id="results">RESULTS</h1>
+<hr class="rule"/>
+</div>
+<div id="colors">
+
+<div class="length">
+<div id="red">
+weak
+</div>
+</div>
+
+<div class="length">
+<div id="brown">
+good
+</div>
+</div>
+
+<div class="length">
+<div id="yellow">
+Great
+</div>
+</div>
+
+<div class="length">
+<div class="lime">
+perfect 
+</div>
+</div>
+
+</div>
+
+<div class="box">
+
+<h2 class="htext">Strength of relationship </h2>
+<hr class="rule1"/>
+<div class="lime">
+ <span id="percent1"></span>
+</div>
+</div>
+<div class="box">
+<h2 class="htext">Seriousness of relationship </h2>
+<hr class="rule1"/>
+<div class="lime">
+ <span id="percent2"></span>
+</div>
+</div>
+<div class="box">
+<h2 class="htext">Future of relationship </h2>
+<hr class="rule1"/>
+<div class="lime">
+ <span id="percent3"></span>
+</div>
+</div>
+<div class="box">
+
+<h2 class="htext">Recommendation</h2>
+<hr class="rule1"/>
+<h3 id="recommendation"></h3>
+</div>
+<button class="btn">Back</button>
+<button class="btn">Home</button>
+</div>
+<script>
+var root=["One.jpeg","Two.jpeg","Three.jpeg","Four.jpeg"];
+var change=0;
+var name,gender,time;
+var feel,love,crush; 
+var calA,calB,calC,strength,seriousness,future,text,score;
+
+var textA; 
+var textB;
+var textC; 
+var textD;
+
+function changeBackgroundImage(){
+setTimeout(changeOpacity,3000);
+document.getElementById("img").style.opacity=1;
+document.getElementById("img").src=root[change];
+if(change!=root.length){
+change++;
+}
+else if(change==root.length){
+change=0;
+}
+}
+
+function changeOpacity(){
+document.getElementById("img").style.opacity=0;
+}
+
+window.onload=function(){
+setInterval(changeBackgroundImage,6000);
+}
+
+
+document.getElementsByClassName("name")[0].onclick=pickone;
+document.getElementsByClassName("name")[1].onclick=picktwo;
+document.getElementsByClassName("name")[2].onclick=pickthree;
+document.getElementsByClassName("name")[3].onclick=pickfour;
+document.getElementsByClassName("name")[4].onclick=pickfive;
+document.getElementsByClassName("name")[5].onclick=picksix;
+document.getElementsByClassName("name")[6].onclick=pickseven;
+document.getElementsByClassName("name")[7].onclick=pickeight;
+document.getElementsByClassName("name")[8].onclick=picknine;
+document.getElementsByClassName("name")[9].onclick=pickten;
+document.getElementsByClassName("name")[10].onclick=pickele;
+document.getElementsByClassName("name")[11].onclick=picktwe;
+document.getElementsByClassName("name")[12].onclick=pickthi;
+document.getElementsByClassName("name")[13].onclick=pickfou;
+document.getElementsByClassName("name")[14].onclick=pickfif;
+document.getElementsByClassName("name")[15].onclick=picksixt;
+document.getElementsByClassName("name")[16].onclick=picksev;
+document.getElementsByClassName("name")[17].onclick=pickeig;
+document.getElementsByClassName("name")[18].onclick=picknin;
+document.getElementsByClassName("name")[19].onclick=picktwen;
+document.getElementsByClassName("name")[20].onclick=picktone;
+document.getElementsByClassName("name")[21].onclick=pickttwo;
+document.getElementsByClassName("name")[22].onclick=pickthre;
+
+function pickone(){
+document.getElementsByClassName("students")[0].checked="checked";
+}
+function picktwo(){
+document.getElementsByClassName("students")[1].checked="checked";
+}
+function pickthree(){
+document.getElementsByClassName("students")[2].checked="checked";
+}
+function pickfour(){
+document.getElementsByClassName("students")[3].checked="checked";
+}
+function pickfive(){
+document.getElementsByClassName("students")[4].checked="checked";
+}
+function picksix(){
+document.getElementsByClassName("students")[5].checked="checked";
+}
+function pickseven(){
+document.getElementsByClassName("students")[6].checked="checked";
+}
+function pickeight(){
+document.getElementsByClassName("students")[7].checked="checked";
+}
+function picknine(){
+document.getElementsByClassName("students")[8].checked="checked";
+}
+function pickten(){
+document.getElementsByClassName("students")[9].checked="checked";
+}
+function pickele(){
+document.getElementsByClassName("students")[10].checked="checked";
+}
+function picktwe(){
+document.getElementsByClassName("students")[11].checked="checked";
+}
+function pickthi(){
+document.getElementsByClassName("students")[12].checked="checked";
+}
+function pickfou(){
+document.getElementsByClassName("students")[13].checked="checked";
+}
+function pickfif(){
+document.getElementsByClassName("students")[14].checked="checked";
+}
+function picksixt(){
+document.getElementsByClassName("students")[15].checked="checked";
+}
+function picksev(){
+document.getElementsByClassName("students")[16].checked="checked";
+}
+function pickeig(){
+document.getElementsByClassName("students")[17].checked="checked";
+}
+function picknin(){
+document.getElementsByClassName("students")[18].checked="checked";
+}
+function picktwen(){
+document.getElementsByClassName("students")[19].checked="checked";
+}
+function picktone(){
+document.getElementsByClassName("students")[20].checked="checked";
+}
+function pickttwo(){
+document.getElementsByClassName("students")[21].checked="checked";
+}
+function pickthre(){
+document.getElementsByClassName("students")[22].checked="checked";
+}
+
+/*validating forms*/
+function securityCode(){
+var first=document.getElementsByClassName("SecurityNum")[0].value;
+var second=document.getElementsByClassName("SecurityNum")[1].value;
+var third=document.getElementsByClassName("SecurityNum")[2].value;
+var fourth=document.getElementsByClassName("SecurityNum")[3].value;
+if(first==3&&second==5&&third==3&&fourth==4){
+document.getElementById("Q2").style.display="block";
+document.getElementById("Q1").style.display="none";
+}
+else if(first==0&&second==0&&third==0&&fourth==5){
+document.getElementById("Q3").style.display="block";
+document.getElementById("Q1").style.display="none";
+}
+else{
+document.getElementsByClassName("errormsg")[0].innerHTML="Wrong security code";
+document.getElementsByClassName("SecurityNum")[0].value="";
+document.getElementsByClassName("SecurityNum")[1].value="";
+document.getElementsByClassName("SecurityNum")[2].value="";
+document.getElementsByClassName("SecurityNum")[3].value="";
+}
+}
+document.getElementsByClassName("btn")[1].onclick=securityCode;
+var voice =new Audio;
+function speakone(){
+voice.src="Record001.3gpp";
+voice.play();
+}
+document.getElementsByClassName("btn")[0].onclick=speakone;
+
+function studentName(){
+var student=document.getElementsByClassName("students");
+for(var i=0;i<=student.length;i++){
+if(student[i].checked) {
+name=document.getElementsByClassName("students")[i].value; 
+document.getElementsByClassName("question")[0].value=name;
+document.getElementById("Q2").style.display="none";
+document.getElementById("Q3").style.display="block";
+}else{
+document.getElementsByClassName("errormsg")[1].innerHTML="Please pick your name";
+}
+}
+}
+document.getElementsByClassName("btn")[3].onclick=studentName;
+function speaktwo(){
+voice.src="Record002.3gpp";
+voice.play();
+}
+document.getElementsByClassName("btn")[2].onclick=speaktwo;
+
+function details(){
+var age=document.getElementsByClassName("question")[1].value; 
+var rawName=document.getElementsByClassName("question")[0].value; 
+var sex=document.getElementsByClassName("sex");
+for(var i =0;i<=sex.length;i++){
+if(sex[i].checked&&age<35&&age>5&&rawName!=""){
+gender=document.getElementsByClassName("sex")[i].value;
+document.getElementById("Q3").style.display="none";
+document.getElementById("Q4").style.display="block"; 
+knowgender();
+}else{
+document.getElementsByClassName("errormsg")[4].innerHTML="Wrong details filling";
+}
+if(age>35||age<11){
+document.getElementsByClassName("errormsg")[2].innerHTML="Please put your correct age";
+}
+}
+}
+document.getElementsByClassName("btn")[5].onclick=details;
+
+function showFace(){
+document.getElementById("face").innerHTML="🙈";
+}
+function hideFace(){
+document.getElementById("face").innerHTML="👀";
+}
+document.getElementById("crush").onfocus=showFace;
+document.getElementById("crush").onblur=hideFace;
+
+function knowgender(){
+if(gender=="male") {
+document.getElementsByClassName("gender")[0].innerHTML="her";
+document.getElementsByClassName("gender")[1].innerHTML="her";
+document.getElementsByClassName("gender")[2].innerHTML="her";
+document.getElementsByClassName("gender")[3].innerHTML="her";
+}
+else if(gender=="female"){
+document.getElementsByClassName("gender")[0].innerHTML="him";
+document.getElementsByClassName("gender")[1].innerHTML="him";
+document.getElementsByClassName("gender")[2].innerHTML="him";
+document.getElementsByClassName("gender")[3].innerHTML="him";
+}
+}
+
+function one(){
+var timing=document.getElementsByClassName("time");
+for(var i=0;i<=timing.length; i++){
+if(timing[i].checked){
+time=document.getElementsByClassName("time")[i].value; 
+var loving=document.getElementsByClassName("love");
+for(var x=0;x<=loving.length;x++){
+if(loving[x].checked){
+love=document.getElementsByClassName("love")[x].value; 
+var feeling=document.getElementsByClassName("feel");
+for(var y=0;y<=feeling.length;y++){
+if(feeling[y].checked){
+feel=document.getElementsByClassName("feel")[y].value; 
+crush=document.getElementById("crush").value; 
+if(time=="shy"||time=="normal"||time=="bold"||time=="excited"&&love=="yes"||love=="no"&&crush!=""&&feel=="5"||feel=="20"||feel=="30"||feel=="0"){
+if(crush.length>0){
+document.getElementById("Q4").style.display="none";
+document.getElementById("Q5").style.display="block"; 
+results();
+}
+}else{
+document.getElementsByClassName("errormsg")[5].innerHTML="Please fill details correctly";
+
+}
+
+}else{
+document.getElementsByClassName("errormsg")[5].innerHTML="Please fill details correctly";
+
+}
+}
+
+}else{
+document.getElementsByClassName("errormsg")[5].innerHTML="Please fill details correctly";
+
+}
+}
+
+}else{
+document.getElementsByClassName("errormsg")[5].innerHTML="Please fill details correctly";
+
+}
+}
+
+}
+
+document.getElementsByClassName("btn")[7].onclick=one;
+
+function results(){
+textA=""+name+" ! you need to put more effort on your relationship with "+crush;
+textB=""+name+" ! consider turning the relationship with your crush "+crush+" to a friendship kind of relationship with nothing attached to it";
+textC=""+name+" ! you might consider getting "+crush+" out of your mind, it could be a regular feeling you get when you see a beautiful person like "+crush;
+textD=""+name+" ! you can consider going ahead with your relationship with "+crush;
+
+switch(feel){
+case "0":
+calA=25;
+break; 
+case "5":
+calA=50;
+break; 
+case "20":
+calA=75;
+break; 
+case "30":
+calA=100;
+break; 
+}
+switch(time){
+case "shy":
+calB=25;
+break; 
+case "normal":
+calB=50;
+break; 
+case "bold":
+calB=100;
+break; 
+case "excited":
+calB=75;
+break; 
+
+}
+switch(love){
+case "yes":
+calC=100;
+break; 
+case "no":
+calC=25;
+break;
+}
+
+strength=(calA+calB)/2;
+seriousness=(calB+calC)/2;
+future=(strength+seriousness)/2;
+score=strength+seriousness+future;
+
+if(score>=200&&score<250){
+document.getElementById("recommendation").innerHTML=textA;
+}
+else if(score>=150&&score<200){
+document.getElementById("recommendation").innerHTML=textB;
+}
+else if(score<=149){
+document.getElementById("recommendation").innerHTML=textC;
+}
+else if(score>=250){
+document.getElementById("recommendation").innerHTML=textD;
+}
+
+if(strength<=40){
+document.getElementsByClassName("lime")[1].style.width=""+strength+"%";
+document.getElementsByClassName("lime")[1].style.background="red";
+document.getElementById("percent1").innerHTML=strength+"%";
+}
+
+else if(strength<=60&&strength>40){
+document.getElementsByClassName("lime")[1].style.width=""+strength+"%";
+document.getElementsByClassName("lime")[1].style.background="brown";
+document.getElementById("percent1").innerHTML=strength+"%";
+}
+else if(strength<=80&&strength>60){
+document.getElementsByClassName("lime")[1].style.width=""+strength+"%";
+document.getElementsByClassName("lime")[1].style.background="yellow";
+document.getElementById("percent1").innerHTML=strength+"%";
+}
+else if(strength<=100&&strength>80){
+document.getElementsByClassName("lime")[1].style.width=""+strength+"%";
+document.getElementsByClassName("lime")[1].style.background="lime";
+document.getElementById("percent1").innerHTML=strength+"%";
+}
+
+if(seriousness<=40){
+document.getElementsByClassName("lime")[2].style.width=""+seriousness+"%";
+document.getElementsByClassName("lime")[2].style.background="red";
+document.getElementById("percent2").innerHTML=seriousness+"%";
+}
+else if(seriousness<=60&&seriousness>40){
+document.getElementsByClassName("lime")[2].style.width=""+seriousness+"%";
+document.getElementsByClassName("lime")[2].style.background="brown";
+document.getElementById("percent2").innerHTML=seriousness+"%";
+}
+else if(seriousness<=80&&seriousness>60){
+document.getElementsByClassName("lime")[2].style.width=""+seriousness+"%";
+document.getElementsByClassName("lime")[2].style.background="yellow";
+document.getElementById("percent2").innerHTML=seriousness+"%";
+}
+
+else if(seriousness<=100&&seriousness>80){
+document.getElementsByClassName("lime")[2].style.width=""+seriousness+"%";
+document.getElementsByClassName("lime")[2].style.background="lime";
+document.getElementById("percent2").innerHTML=seriousness+"%";
+}
+
+if(future<=40){
+document.getElementsByClassName("lime")[3].style.width=""+future+"%";
+document.getElementsByClassName("lime")[3].style.background="red";
+document.getElementById("percent3").innerHTML=future+"%";
+}
+else if(future<=60&&future>40){
+document.getElementsByClassName("lime")[3].style.width=""+future+"%";
+document.getElementsByClassName("lime")[3].style.background="brown";
+document.getElementById("percent3").innerHTML=future+"%";
+}
+else if(future<=80&&future>60){
+document.getElementsByClassName("lime")[3].style.width=""+future+"%";
+document.getElementsByClassName("lime")[3].style.background="yellow";
+document.getElementById("percent3").innerHTML=future+"%";
+}
+else if(future<=100&&future>80){
+document.getElementsByClassName("lime")[3].style.width=""+future+"%";
+document.getElementsByClassName("lime")[3].style.background="lime";
+document.getElementById("percent3").innerHTML=future+"%";
+}
+
+
+}
+function back(){
+document.getElementById("Q5").style.display="none";
+document.getElementById("Q4").style.display="block"; 
+}
+function home(){
+document.getElementById("Q5").style.display="none";
+document.getElementById("Q1").style.display="block"; 
+document.getElementsByClassName("SecurityNum")[0].value="";
+document.getElementsByClassName("SecurityNum")[1].value="";
+document.getElementsByClassName("SecurityNum")[2].value="";
+document.getElementsByClassName("SecurityNum")[3].value="";
+}
+document.getElementsByClassName("btn")[8].onclick=back;
+document.getElementsByClassName("btn")[9].ontouchend=home;
+</script>
+</body>
+</html>
